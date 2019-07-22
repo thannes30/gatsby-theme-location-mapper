@@ -53,7 +53,7 @@ exports.onCreateNode = ({ node, actions }, options) => {
     value: slug
   });
 
-  console.log(`DID IT WORK ${slug}`);
+  console.log(`PAGE CREATED - ${slug}`);
 };
 
 /*

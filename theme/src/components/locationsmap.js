@@ -1,7 +1,7 @@
 import React from "react";
 
-const StoreMap = ({ locations }) => {
+const LocationsMap = ({ locations }) => {
   return <pre>{JSON.stringify(locations, null, 2)}</pre>;
 };
 
-export default StoreMap;
+export default LocationsMap;
