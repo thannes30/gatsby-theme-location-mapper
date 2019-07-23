@@ -7,7 +7,7 @@ module.exports = options => ({
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: options.contentPath || "docs/"
+        path: options.contentPath || "locations/"
       }
     }
   ]

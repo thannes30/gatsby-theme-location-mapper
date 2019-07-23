@@ -3,5 +3,8 @@
   "workspaces": [
     "theme",
     "demo"
-  ]
+  ],
+  "dependencies": {
+    "gatsby-transformer-json": "^2.2.2"
+  }
 }

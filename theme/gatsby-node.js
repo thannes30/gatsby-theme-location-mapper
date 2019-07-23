@@ -16,17 +16,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `);
 
   if (result.errors) {
-    // OH NO
-    reporter.panic("Error loading location mapper mdx files", result.errors);
+    reporter.panic("Error loading locations mdx files - ", result.errors);
   }
 
+  // build individual location pages
   result.data.allFile.nodes.forEach(node => {
+    console.log('NODE SLUG = ', node.fields.slug);
     actions.createPage({
       path: node.fields.slug,
-      component: require.resolve("./src/templates/default.js"),
+      component: require.resolve("./src/templates/location.js"),
       context: { slug: node.fields.slug }
     });
   });
+
+  // create our all locations page
+  actions.createPage({
+    path: '/locations',
+    component: require.resolve("./src/templates/all-locations.js"),
+    context: { 
+      name: 'Locations'
+    }
+  });
+
 };
 
 exports.onCreateNode = ({ node, actions }, options) => {
@@ -39,11 +50,12 @@ exports.onCreateNode = ({ node, actions }, options) => {
     // Using the path plugin from Node
     // Break apart the relative path for the file
     // and give us the directory
-    console.log(node);
+
+    // console.log("node = ", node);
     const { dir } = path.parse(node.relativePath);
     const basePath = options.basePath || "/";
 
-    return path.join(basePath, dir, node.name);
+    return path.join(basePath, dir, 'locations', node.name);
   };
 
   const slug = toPostPath(node);
@@ -53,17 +65,15 @@ exports.onCreateNode = ({ node, actions }, options) => {
     value: slug
   });
 
-  console.log(`PAGE CREATED - ${slug}`);
 };
 
 /*
   Runs before Gatsby does things
-  "I'm gonna let u finish but before u do"
-  check if there's a content directory and if not create one
+  check if there's a content directory and if not create locations dir
 */
 exports.onPreBootstrap = ({ store }, options) => {
   const { program } = store.getState();
-  const basePath = options.basePath || "docs";
+  const basePath = options.basePath || "locations";
   const dir = path.join(program.directory, basePath);
   if (!fs.existsSync(dir)) {
     mkdirp.sync(dir);
