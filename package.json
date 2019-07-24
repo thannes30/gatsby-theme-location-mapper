@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo"
+    "site"
   ],
   "dependencies": {
     "gatsby-transformer-json": "^2.2.2"

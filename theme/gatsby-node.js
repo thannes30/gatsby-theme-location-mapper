@@ -82,7 +82,7 @@ exports.onPreBootstrap = ({ store }, options) => {
     if (err) throw err;
     console.log('Test location file created at ' + dir + ' all.mdx');
   });
-  fs.writeFile('/' + dir + '/example.mdx', '---\nname: Example\nlat: 39.828\nlng: 98.579\nhours: 9AM-5PM\ndays: M-F\naddress: Lebanon, KS\ndescription: The geographical center of the United States!\n---\n#Example!\n\nThis is an example location file, import the LocationsMap component and pass it props to view it on the map.', (err) => {
+  fs.writeFile('/' + dir + '/example.mdx', '---\nname: Example\nlat: 39.828\nlng: 98.579\nhours: 9AM-5PM\ndays: M-F\naddress: Lebanon, KS\ndescription: The geographical center of the United States!\n---\nimport LocationsMap from "gatsby-theme-location-mapper/src/components/locationsmap";\n\n# Example!\n\nThis is an example location file, create more MDX files with frontmatter to add more locations!.\n\n<LocationsMap locations={props.locations} />', (err) => {
     if (err) throw err;
     console.log('Test location file created at ' + dir + ' example.mdx');
   });

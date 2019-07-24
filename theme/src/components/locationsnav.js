@@ -17,12 +17,21 @@ const LocationsNav = () => (
     `}
     render= {data => (
       <ul>
-        {data.allFile.nodes.map((node) =>
-          <li><Link to={node.fields.slug}>{node.fields.slug}</Link></li>
-        )}
+        {listItems(data)}
       </ul>
     )}
   />
 )
+
+const listItems = (data) => {
+  let items = data.allFile.nodes;
+  return items.map((node, idx) => {
+    let name = node.fields.slug.split('/').slice(2);
+    let formattedName = name.join('/');
+    return (
+      <li key={idx}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></li>
+    )
+  })
+}
 
 export default LocationsNav;

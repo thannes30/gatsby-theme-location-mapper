@@ -1,12 +1,14 @@
 {
   "name": "gatsby-theme-location-mapper",
+  "description": "Gatsby Theme for showing physical locations on a map. e.g. Store Locator",
+  "version": "1.0.0",
   "author": "Tim Hannes",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
-    "gatsby-theme"
+    "gatsby-theme",
+    "store-locator"
   ],
-  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {

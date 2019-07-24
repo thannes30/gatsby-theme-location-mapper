@@ -2,7 +2,9 @@ module.exports = options => ({
   plugins: [
     {
       resolve: "gatsby-plugin-mdx",
-      options: {}
+      options: {
+        extensions: [`.md`,`.mdx`],
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
