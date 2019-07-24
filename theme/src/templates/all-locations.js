@@ -26,25 +26,25 @@ export const query = graphql`
 `;
 
 const Default = ({ data }) => {
-  console.log(data)
-
   let allLocationsData = []
   let pageBody = ''
   data.allMdx.edges.forEach(edge => {
-    if (edge.node.frontmatter.name !== 'Locations') {
+    if (edge.node.frontmatter.name !== 'All Locations') {
       allLocationsData.push(edge.node.frontmatter)
     } else {
       pageBody = edge.node.body
     }
   });
 
-  console.log('allLocationsData = ', allLocationsData);
+  console.log(pageData)
 
-  const page = {
+  const pageData = {
     body: pageBody,
-    allLocationsData: allLocationsData
+    locations: allLocationsData
   };
-  return <Page {...page} />;
+
+  return <Page {...pageData} />;
+
 };
 
 export default Default;

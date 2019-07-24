@@ -23,18 +23,20 @@ export const query = graphql`
 `;
 
 const Default = ({ data }) => {
-  const page = {
+  const pageData = {
     body: data.file.childMdx.body,
-    location: {
-      lat: data.file.childMdx.frontmatter.lat,
-      lng: data.file.childMdx.frontmatter.lng,
-      hours: data.file.childMdx.frontmatter.hours,
-      days: data.file.childMdx.frontmatter.days,
-      address: data.file.childMdx.frontmatter.address,
-      description: data.file.childMdx.frontmatter.description,
-    }
+    locations: [
+      {
+        lat: data.file.childMdx.frontmatter.lat,
+        lng: data.file.childMdx.frontmatter.lng,
+        hours: data.file.childMdx.frontmatter.hours,
+        days: data.file.childMdx.frontmatter.days,
+        address: data.file.childMdx.frontmatter.address,
+        description: data.file.childMdx.frontmatter.description
+      }
+    ]
   };
-  return <Page {...page} />;
+  return <Page {...pageData} />;
 };
 
 export default Default;

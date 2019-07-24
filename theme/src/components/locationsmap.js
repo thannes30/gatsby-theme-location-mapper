@@ -1,9 +1,11 @@
 import React from "react";
+import LocationsNav from "./locationsnav";
 
-const LocationsMap = ({ props }) => {
+const LocationsMap = (locations) => {
   return (
     <>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <LocationsNav />
+      <pre>{JSON.stringify(locations, null, 2)}</pre>
     </>
   );
 };

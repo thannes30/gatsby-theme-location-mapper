@@ -8,11 +8,10 @@ address: 262 Canal St, New York, NY 10013
 description: Our flagship location, located on SoHo.
 ---
 
-import Button from "gatsby-theme-location-mapper/src/components/button";
 import LocationsMap from "gatsby-theme-location-mapper/src/components/locationsmap";
 
 # Store Locator - NY
 
 ### This is the Store Locator - New York map.
 
-<LocationsMap props={props} />
+<LocationsMap locations={props.locations} />
