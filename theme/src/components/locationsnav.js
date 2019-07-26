@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 
 // Declaring query here allows us to shadow components
@@ -25,11 +25,12 @@ const LocationsNav = () => (
 
 const listItems = (data) => {
   let items = data.allFile.nodes;
-  return items.map((node, idx) => {
+  return items.map((node, i) => {
     let name = node.fields.slug.split('/').slice(2);
     let formattedName = name.join('/');
+    console.log(i);
     return (
-      <li key={idx}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></li>
+      <li key={i}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></li>
     )
   })
 }

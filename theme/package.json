@@ -17,10 +17,14 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "@mdx-js/mdx": "^1.0.21",
-    "@mdx-js/react": "^1.0.21",
+    "@mdx-js/react": "^1.0.27",
     "gatsby-plugin-mdx": "^1.0.7",
+    "gatsby-plugin-theme-ui": "^0.2.18",
     "gatsby-source-filesystem": "^2.1.2",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "theme-ui": "^0.2.20"
   }
 }

@@ -1,5 +1,6 @@
 module.exports = options => ({
   plugins: [
+    "gatsby-plugin-theme-ui",
     {
       resolve: "gatsby-plugin-mdx",
       options: {

@@ -36,8 +36,6 @@ const Default = ({ data }) => {
     }
   });
 
-  console.log(pageData)
-
   const pageData = {
     body: pageBody,
     locations: allLocationsData
