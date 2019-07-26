@@ -15,7 +15,8 @@ export const theme = {
   },
   sizes: {
     default: "90vw",
-    max: "980px",
+    max: "920px",
+    full: "100%",
   },
   styles: {
     Layout: {
@@ -29,20 +30,35 @@ export const theme = {
       color: "background",
       fontWeight: "bold",
       margin: "0 auto",
-      maxWidth: "max",
-      padding: 3,
-      width: "default",
+      width: "full",
+      maxWidth: "full",
+      padding: 1,
       a: {
         color: "inherit",
+      },
+      h1: {
+        margin: "0",
       },
     },
     Main: {
       margin: "0 auto",
-      maxWidth: "max",
-      width: "default",
+      maxWidth: "full",
+      width: "full",
     },
     Container: {
-      padding: 3,
+      padding: 2,
+    },
+    Footer: {
+      backgroundColor: "primary",
+      color: "background",
+      fontWeight: "bold",
+      margin: "0 auto",
+      width: "full",
+      maxWidth: "full",
+      padding: 1,
+      a: {
+        color: "inherit",
+      },
     },
     h1: {
       color: "gray.3",
