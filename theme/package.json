@@ -22,9 +22,12 @@
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.27",
     "gatsby-plugin-mdx": "^1.0.7",
+    "gatsby-plugin-react-leaflet": "^2.0.11",
     "gatsby-plugin-theme-ui": "^0.2.18",
     "gatsby-source-filesystem": "^2.1.2",
+    "leaflet": "^1.5.1",
     "mkdirp": "^0.5.1",
+    "react-leaflet": "^2.4.0",
     "theme-ui": "^0.2.20"
   }
 }

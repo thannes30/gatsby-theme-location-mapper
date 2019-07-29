@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+}
+
+.leaflet-container {
+  height: 400px;
+  margin: 40px auto;
+}

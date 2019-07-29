@@ -1,6 +1,9 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Layout, Header, Main, Container, Footer } from "theme-ui"
+import { Layout, Header, Main, Container, Footer } from "theme-ui";
+import LocationsNav from "./locationsnav";
+import LeafletMap from "./leafletmap";
+import "./page.css";
 
 const Page = (pageData) => {
   console.log('pageData from page component > ', pageData);
@@ -13,7 +16,9 @@ const Page = (pageData) => {
       </Header>
       <Main>
         <Container>
-          <MDXRenderer locations={pageData.locations}>{pageData.body}</MDXRenderer>
+          <MDXRenderer>{pageData.body}</MDXRenderer>
+          <LocationsNav locations={pageData.locations} />
+          <LeafletMap locations={pageData.locations} />
         </Container>
       </Main>
       <Footer>

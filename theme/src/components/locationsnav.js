@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
+import { Styled } from "theme-ui";
 
 // Declaring query here allows us to shadow components
 const LocationsNav = () => (
@@ -16,9 +17,9 @@ const LocationsNav = () => (
       }
     `}
     render= {data => (
-      <ul>
+      <Styled.ul>
         {listItems(data)}
-      </ul>
+      </Styled.ul>
     )}
   />
 )
@@ -30,7 +31,7 @@ const listItems = (data) => {
     let formattedName = name.join('/');
     console.log(i);
     return (
-      <li key={i}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></li>
+      <Styled.li key={i}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></Styled.li>
     )
   })
 }

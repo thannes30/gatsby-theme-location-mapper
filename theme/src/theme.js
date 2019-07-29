@@ -1,4 +1,7 @@
 export const theme = {
+  breakpoints: [
+    '40em', '56em', '64em',
+  ],
   space: [0, 4, 8, 16, 32],
   fonts: {
     body: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
@@ -19,11 +22,15 @@ export const theme = {
     full: "100%",
   },
   styles: {
+    root: {
+      margin: "0",
+    },
     Layout: {
       color: "gray.2",
       fontFamily: "body",
       fontSize: 1,
       lineHeight: "body",
+      margin: "0",
     },
     Header: {
       backgroundColor: "primary",
@@ -69,16 +76,21 @@ export const theme = {
     },
     ul: {
       borderTop: "1px solid",
+      borderBottom: "1px solid",
       borderColor: "gray.0",
       listStyle: "none",
       padding: 0,
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
     },
     li: {
-      borderBottom: "1px solid",
-      borderColor: "gray.1",
-      padding: 2,
-      "&:focus-within,&:hover": {
-        backgroundColor: "gray.0",
+      a: {
+        display: "inline-block",
+        padding: 3,
+        "&:focus-within,&:hover": {
+          backgroundColor: "gray.0",
+        },
       },
     },
   },
