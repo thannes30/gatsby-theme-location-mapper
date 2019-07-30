@@ -6,7 +6,7 @@ import LeafletMap from "./leafletmap";
 import "./page.css";
 
 const Page = (pageData) => {
-  console.log('pageData from page component > ', pageData);
+
   return (
     <Layout>
       <Header>
@@ -28,6 +28,7 @@ const Page = (pageData) => {
       </Footer>
     </Layout>
   )
+
 };
 
 export default Page;

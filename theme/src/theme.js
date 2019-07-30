@@ -85,6 +85,7 @@ export const theme = {
       a: {
         display: "inline-block",
         padding: 3,
+        textTransform: "capitalize",
         "&:focus-within,&:hover": {
           backgroundColor: "gray.0",
         },

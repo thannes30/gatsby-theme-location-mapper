@@ -1,34 +1,23 @@
 import React, { Component } from "react"
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Link } from "gatsby";
 
 class LeafletMap extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      locations: this.props.locations,
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 4,
-    }
-  }
-
   render() {
 
-    console.log(this.props);
+    const locations = this.props.locations;
 
-    const position = ['39.828', '-98.579'];
-
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       return (
         <div className="map-wrapper">
-          {(typeof window !== 'undefined') ? (
-            <Map center={position} zoom={this.state.zoom}>
+          {(typeof window !== "undefined") ? (
+            <Map bounds={getMapCenter(locations)} center={getSingleLocation(locations)} zoom={getZoomLevel(locations)}>
               <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-            {listMarkers(this.state.locations)}
+            {listMarkers(locations)}
             </Map>
           ) : null}
         </div>
@@ -38,17 +27,57 @@ class LeafletMap extends Component {
   }
 }
 
+const getZoomLevel = (locations) => {
+  if (locations.length === 1) {
+    return 14;
+  }
+  return 4;
+}
+
+const getSingleLocation = (locations) => {
+  if (locations.length === 1) {
+    let center = [locations[0].lat, locations[0].lng];
+    return center;
+  }
+  return null;
+}
+
+const getMapCenter = (locations) => {
+  let latLngBounds = [];
+  for (let i = 0; i < locations.length; i++) {
+    let {lat, lng} = locations[i];
+    let coords = [];
+    coords.push(lat, lng);
+    latLngBounds.push(coords);
+  }
+  return latLngBounds.length > 1 ? latLngBounds : null;
+}
+
 const listMarkers = (locations) => {
   return locations.map((node, i) => {
-    let {lat, lng, name, title, address, days, description, hours} = node;
-    console.log(lat, lng, name, title, address, days, description, hours);
+    let {lat, lng, name, address, days, description, hours} = node;
     let position = [lat, lng];
     return (
       <Marker key={i} position={position}>
         <Popup>
-          {name}<br />
-          {days}<br/>
-          {description}<br/>
+          {!!name &&
+            <><Link to={`/locations/` + name.toLowerCase()}><b>{name}</b></Link><br /></>
+          }
+          {!!address &&
+            <>{address}<br/></>
+          }
+          {!!days &&
+            <>{days}<br/></>
+          }
+          {!!hours &&
+            <>{hours}<br/></>
+          }
+          {!!description &&
+            <>{description}<br/></>
+          }
+          {!name &&
+            <><br /><Link to={`/locations/all`}>Back</Link></>
+          }
         </Popup>
       </Marker>
     )

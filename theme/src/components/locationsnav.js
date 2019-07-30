@@ -27,10 +27,10 @@ const LocationsNav = () => (
 const listItems = (data) => {
   let items = data.allFile.nodes;
   return items.map((node, i) => {
-    let name = node.fields.slug.split('/').slice(2);
-    let formattedName = name.join('/');
+    let name = node.fields.slug.split("/").slice(2);
+    let formattedName = name.join("/").replace(/[_-]/g, " ");
     return (
-      <Styled.li key={i}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></Styled.li>
+      <Styled.li key={i}><Link to={node.fields.slug}>{formattedName}</Link></Styled.li>
     )
   })
 }
