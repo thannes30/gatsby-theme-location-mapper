@@ -29,5 +29,8 @@
     "mkdirp": "^0.5.1",
     "react-leaflet": "^2.4.0",
     "theme-ui": "^0.2.20"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }

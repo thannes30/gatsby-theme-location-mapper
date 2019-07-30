@@ -10,6 +10,7 @@
     "react-dom": "^16.8.6"
   },
   "scripts": {
-    "develop": "gatsby clean && gatsby develop"
+    "develop": "gatsby clean && gatsby develop",
+    "deploy:github": "yarn run build && node ../deploy-github"
   }
 }
