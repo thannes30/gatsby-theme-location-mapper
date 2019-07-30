@@ -6,15 +6,18 @@ class LeafletMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      locations: this.props.locations,
       lat: 51.505,
       lng: -0.09,
-      zoom: 13,
+      zoom: 4,
     }
   }
 
   render() {
 
-    const position = [this.state.lat, this.state.lng];
+    console.log(this.props);
+
+    const position = ['39.828', '-98.579'];
 
     if (typeof window !== 'undefined') {
       return (
@@ -25,11 +28,7 @@ class LeafletMap extends Component {
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={position}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-              </Marker>
+            {listMarkers(this.state.locations)}
             </Map>
           ) : null}
         </div>
@@ -38,5 +37,22 @@ class LeafletMap extends Component {
     return null
   }
 }
+
+const listMarkers = (locations) => {
+  return locations.map((node, i) => {
+    let {lat, lng, name, title, address, days, description, hours} = node;
+    console.log(lat, lng, name, title, address, days, description, hours);
+    let position = [lat, lng];
+    return (
+      <Marker key={i} position={position}>
+        <Popup>
+          {name}<br />
+          {days}<br/>
+          {description}<br/>
+        </Popup>
+      </Marker>
+    )
+  })
+};
 
 export default LeafletMap;

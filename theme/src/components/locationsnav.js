@@ -29,7 +29,6 @@ const listItems = (data) => {
   return items.map((node, i) => {
     let name = node.fields.slug.split('/').slice(2);
     let formattedName = name.join('/');
-    console.log(i);
     return (
       <Styled.li key={i}><Link to={node.fields.slug}>{formattedName.replace('/[_-]/g', ' ')}</Link></Styled.li>
     )

@@ -29,7 +29,7 @@ const Default = ({ data }) => {
   let allLocationsData = []
   let pageBody = ''
   data.allMdx.edges.forEach(edge => {
-    if (edge.node.frontmatter.name !== 'All Locations') {
+    if (edge.node.frontmatter.name !== 'All') {
       allLocationsData.push(edge.node.frontmatter)
     } else {
       pageBody = edge.node.body
