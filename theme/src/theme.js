@@ -22,9 +22,6 @@ export const theme = {
     full: "100%",
   },
   styles: {
-    root: {
-      margin: "0",
-    },
     Layout: {
       color: "gray.2",
       fontFamily: "body",
