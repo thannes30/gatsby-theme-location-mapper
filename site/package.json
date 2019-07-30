@@ -11,6 +11,6 @@
   },
   "scripts": {
     "develop": "gatsby clean && gatsby develop",
-    "deploy:github": "yarn run build && node ../deploy-github"
+    "deploy:github": "gatsby build && node ../deploy-github"
   }
 }
