@@ -22,6 +22,9 @@ description: Our flagship location, located on SoHo.
 
 ## Theme Install
 1. Add the package
+```sh
+npm install --save gatsby-theme-location-mapper
+```
 2. Add "gatsby-theme-location-mapper" to your site's gatsby-config.js
 ```js
   module.exports = {
@@ -29,10 +32,13 @@ description: Our flagship location, located on SoHo.
       {
         resolve: "gatsby-theme-location-mapper"
       }
-    ],
+    ]
   }
 ```
 3. Restart your development server
+```sh
+gatsby develop
+```
 4. Visit [http://localhost:8000/locations/all](http://localhost:8000/locations/all)
 
 
