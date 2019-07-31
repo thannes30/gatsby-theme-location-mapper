@@ -59,7 +59,7 @@ const listMarkers = (locations) => {
       <Marker key={i} position={position}>
         <Popup>
           {!!name &&
-            <><Link to={`/locations/` + name.toLowerCase()}><b>{name}</b></Link><br /></>
+            <><Link to={`/locations/` + name.toLowerCase().replace(/ /g, '-')}><b>{name}</b></Link><br /></>
           }
           {!!address &&
             <>{address}<br/></>
