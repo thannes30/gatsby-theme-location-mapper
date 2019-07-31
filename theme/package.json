@@ -3,11 +3,14 @@
   "description": "Gatsby Theme for showing physical locations on a map. e.g. Store Locator",
   "version": "1.0.0",
   "author": "Tim Hannes",
+  "repository": "https://github.com/thannes30/gatsby-theme-location-mapper",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
     "gatsby-theme",
-    "store-locator"
+    "store-locator",
+    "leaflet",
+    "react"
   ],
   "main": "index.js",
   "license": "MIT",
