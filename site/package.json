@@ -11,6 +11,6 @@
   },
   "scripts": {
     "develop": "gatsby clean && gatsby develop",
-    "deploy:github": "gatsby build && node ../deploy-github"
+    "deploy:github": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

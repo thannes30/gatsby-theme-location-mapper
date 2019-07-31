@@ -10,5 +10,6 @@ module.exports = {
       resolve: "gatsby-theme-location-mapper",
       options: {}
     }
-  ]
+  ],
+  pathPrefix: "/gatsby-theme-location-mapper"
 };
