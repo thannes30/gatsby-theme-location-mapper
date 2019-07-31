@@ -8,22 +8,20 @@ class LeafletMap extends Component {
 
     const locations = this.props.locations;
 
-    if (typeof window !== "undefined") {
-      return (
-        <div className="map-wrapper">
-          {(typeof window !== "undefined") ? (
-            <Map bounds={getMapCenter(locations)} center={getSingleLocation(locations)} zoom={getZoomLevel(locations)}>
-              <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-            {listMarkers(locations)}
-            </Map>
-          ) : null}
-        </div>
-      )
-    }
-    return null
+    return (
+      <div className="map-wrapper">
+        {(typeof window !== "undefined") ? (
+          <Map bounds={getMapCenter(locations)} center={getSingleLocation(locations)} zoom={getZoomLevel(locations)}>
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          {listMarkers(locations)}
+          </Map>
+        ) : null}
+      </div>
+    )
+
   }
 }
 
