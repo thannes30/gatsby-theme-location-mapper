@@ -4,7 +4,7 @@ ghpages.publish(
   "public",
   {
     branch: "master",
-    repo: "https://github.com/thannes30/gatsby-theme-location-mapper.github.io.git",
+    repo: "https://github.com/thannes30/gatsby-theme-location-mapper.git",
   },
   () => {
     console.log("Deploy Complete!")
