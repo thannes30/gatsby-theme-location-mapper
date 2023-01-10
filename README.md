@@ -1,6 +1,6 @@
 # Gatsby Theme Location Mapper
 
-## [Demo] (https://thannes30.github.io/gatsby-theme-location-mapper/)
+## [Demo](https://thannes30.github.io/gatsby-theme-location-mapper/)
 
 ### This is a location mapper Gatsby theme intended to display different locations, and information about the locations on a map.
 
