@@ -78,11 +78,11 @@ exports.onPreBootstrap = ({ store }, options) => {
   if (!fs.existsSync(dir)) {
     mkdirp.sync(dir);
   }
-  fs.writeFile("/" + dir + "/all.mdx", "---\nname: All\n---\n\n# Store Locator - All Locations\n\nHere are all of our store locations. Click on a location for more information!\n\n\nAdd more MDX files with frontmatter to add more locations!", (err) => {
+  fs.writeFile(dir + "/all.mdx", "---\nname: All\n---\n\n# Store Locator - All Locations\n\nHere are all of our store locations. Click on a location for more information!\n\n\nAdd more MDX files with frontmatter to add more locations!", (err) => {
     if (err) throw err;
     console.log("All location file created at " + dir + "/all.mdx");
   });
-  fs.writeFile("/" + dir + "/kansas.mdx", "---\nname: Kansas\nlat: 39.828\nlng: -98.579\nhours: 9AM-5PM\ndays: M-F\naddress: Lebanon, KS\ndescription: Come visit us at the geographical center of the United States!\n---\n\n# Example!\n\nThis is an example location file, create more MDX files with frontmatter to add more locations!.", (err) => {
+  fs.writeFile(dir + "/kansas.mdx", "---\nname: Kansas\nlat: 39.828\nlng: -98.579\nhours: 9AM-5PM\ndays: M-F\naddress: Lebanon, KS\ndescription: Come visit us at the geographical center of the United States!\n---\n\n# Example!\n\nThis is an example location file, create more MDX files with frontmatter to add more locations!.", (err) => {
     if (err) throw err;
     console.log("Test location file created at " + dir + "/kansas.mdx");
   });
